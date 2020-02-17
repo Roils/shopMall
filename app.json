@@ -16,11 +16,37 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "购淘",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true,
-    "backgroundColor": "red"
+    "navigationBarBackgroundColor": "#f4432c",
+    "navigationBarTitleText": "购淘商城",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/home.png",
+      "selectedIconPath": "icons/homes.png"
+    },
+    {
+      "pagePath": "pages/category/category",
+      "text": "分类",
+      "iconPath": "icons/cascade.png",
+      "selectedIconPath": "icons/cascades.png"
+    },{
+      "pagePath": "pages/cart/cart",
+      "text": "购物车",
+      "iconPath": "icons/cart.png",
+      "selectedIconPath": "icons/carts.png"
+    },
+    {
+      "pagePath": "pages/user/user",
+      "text": "我的",
+      "iconPath": "icons/people.png",
+      "selectedIconPath": "icons/peoples.png"
+    }],
+    "selectedColor": "#f4432c",
+    "color": "#8a8a8a",
+    "backgroundColor": "#fcf8f8"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
