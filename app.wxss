@@ -13,3 +13,6 @@ page{
     --themeColor:#f4432c;
     font-size: 28rpx;
 }
+image{
+    width:100%;
+}

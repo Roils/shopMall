@@ -1,5 +1,35 @@
 <!--pages/index/index.wxml-->
-<text class="iconfont iconfavorfill"></text>
-<view>
-    首页
+<view class="search_input">
+  <!-- 搜索框 -->
+  <searchInput></searchInput>
+  <!-- 轮播图开始 -->
+  <view class="index_swiper">
+    <swiper autoplay="true" indicator-dots interval="3000" circular>
+      <swiper-item wx:for="{{ swiperList }}" wx:key="goods_id">
+        <navigator>
+          <image mode="widthFix" src="{{ item.image_src}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图结束 -->
+  <!-- 导航标签 -->
+  <view class="index_cate">
+    <navigator wx:for="{{cateList}}" wx:key="name" class="" >
+      <image mode="widthFix" src="{{ item.image_src }}"></image>
+    </navigator>
+  </view>
+  <view class="index_commo">
+    <view class="commo_list" wx:for="{{ commoList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+      <view class="commo_title">
+        <image mode="widthFix" src="{{ item1.floor_title.image_src}}" />
+      </view>
+      <view class="commo_img">
+        <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name">
+          <image src="{{ item2.image_src}}" mode="{{index2==0?'widthFix':'scaleToFill'}}"/>
+        </navigator>
+      </view>
+    </view>
+  </view>
 </view>
+

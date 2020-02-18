@@ -1,2 +1,28 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<!-- pages/category/category.wxml -->
+<view class="cate">
+    <searchInput></searchInput>
+    <view class="cate_container">
+        <scroll-view scroll-y class="l_menu" >
+            <view class="menu_item {{ index==currenIndex?'active':''}}" wx:for="{{ cateLeft }}" wx:key="*this" bindtap="handitemTab" data-index="{{ index }}">{{ item }}</view>
+        </scroll-view>
+        <scroll-view scroll-top="{{ scrolltop }}" class="r_menu" scroll-y>
+            <view class="goods_item" wx:for="{{ cateRight }}" wx:for-index="index1" wx:for-item="item1">
+                <view class="goods_title">
+                    <text class="separate">/</text>
+                    <view class="title">
+                        {{ item1.cat_name }}
+                    </view>
+                    <text class="separate">/</text>
+                </view>
+                <view class="goods_list">
+                    <navigator url="/pages/goods_list/goods_list?cid={{ item2.cat_id }}" class="goods_nav" wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_id">
+                        <image mode="widthFix" src="{{item2.cat_icon}}" alt=""></image>
+                        <view class="goods_name">
+                            {{ item2.cat_name }}
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
