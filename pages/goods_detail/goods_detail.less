@@ -1,25 +1,32 @@
 /* pages/goods_detail/goods_detail.wxss */
+page{
+    padding-bottom: 90rpx;
+}
 .detail_swiper {
     swiper {
         height: 60vw;
         text-align: center;
-        image{
+
+        image {
             width: 60%;
         }
     }
 }
-.goods_price{
+
+.goods_price {
     padding: 15rpx 0;
     font-size: 32rpx;
     font-weight: 600;
     color: var(--themeColor);
 }
-.goods_name_row{
+
+.goods_name_row {
     border-top: 2rpx solid #dedede;
     border-bottom: 2rpx solid #dedede;
     padding: 12rpx 0;
     display: flex;
-    .goods_name{
+
+    .goods_name {
         flex: 5;
         color: black;
         font-size: 30rpx;
@@ -30,30 +37,83 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
     }
-    .goods_collect{
+
+    .goods_collect {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         border-left: 1rpx solid #aeaeae;
-        text{
 
-        }
-        .collect_text{
+        text {}
+
+        .collect_text {
             color: #aeaeae;
         }
     }
 }
 
-.goods_info{
-    .goods_info_title{
+.goods_info {
+    .goods_info_title {
         font-size: 32rpx;
         color: var(--themeColor);
         font-weight: 600;
         padding: 20rpx;
     }
-    .goods_info_content{
 
+    .goods_info_content {}
+}
+
+.btn_tools {
+    border-top: 1rpx solid #ccc;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90rpx;
+    background-color: white;
+    display: flex;
+
+    .tools_item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 24rpx;
+        position: relative;
+        button{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+        }
+    }
+
+    .btn_cart {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffa500;
+        color: white;
+        font-size: 30rpx;
+        font-weight: 600;
+    }
+
+    .btn_buy {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #eb4450;
+        color: white;
+        font-size: 30rpx;
+        font-weight: 600;
     }
 }

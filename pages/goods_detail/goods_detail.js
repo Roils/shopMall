@@ -50,11 +50,29 @@ Page({
     wx.previewImage({
       current: current,
       urls: urls,
-      success: (result) => {
-        
-      },
-      fail: () => {},
-      complete: () => {}
+    });
+      
+  },
+
+  /* 点击加入购物车 */
+  addcart(){
+    var that = this
+    /* 从本地获取购物车数组 */
+    let cart = wx.getStorageSync('cart')||[]
+    let index = cart.findIndex(function(v){
+      return v.goods_id===that.goodsinfo.goods_id
+    })
+    if(index ==-1){
+      that.goodsinfo.num = 1
+      cart.push(that.goodsinfo)
+    }else{
+      cart[index].num++
+    }
+    wx.setStorageSync("cart", cart);
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      mask: true,
     });
       
   },

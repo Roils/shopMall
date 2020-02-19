@@ -14,7 +14,31 @@ Page({
   onLoad: function (options) {
 
   },
+  getAddress() {
+    /* 获取用户设置 */
+    wx.getSetting({
+      success: (result) => {
+        const scopeAdd = result.authSetting['scope.address']
+        if (scopeAdd === true || scopeAdd === undefined) {
+          wx.chooseAddress({
+            success: (result1) => {
+            },
+          });
+        } else {
+          wx.openSetting({
+            success: (result2) => {
+              wx.chooseAddress({
+                success: (result3) => {
+                },
+              });
+            },
+          });
 
+        }
+      },
+    });
+    /* 获取收货地址 */
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
