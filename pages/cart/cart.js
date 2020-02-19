@@ -5,12 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    address: [],
+    value1: 1,
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
+  handleChange1({ detail }) {
+    this.setData({
+      value1: detail.value
+    })
+  },
   onLoad: function (options) {
 
   },
@@ -50,6 +55,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this
+    const address = wx.getStorageSync("address");
+    that.setData({
+      address: address
+    })
 
   },
 

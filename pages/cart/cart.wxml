@@ -1,4 +1,57 @@
-<!--pages/cart/cart.wxml-->
+<!-- pages/cart/cart.wxml -->
 <view>
     <button bindtap="getAddress">点击获取收货地址</button>
+</view>
+<view class="cart_content">
+    <view class="cart_title"></view>
+    <view class="cart_main">
+        <view class="cart_item">
+            <view class="cart_wrap">
+                <checkbox-group>
+                    <checkbox class=""></checkbox>
+                </checkbox-group>
+            </view>
+            <navigator class="cart_nav">
+                <image mode="widthFix" src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000715469339_1_400x400.jpg" />
+            </navigator>
+            <view class="cart_info">
+                <view class="goods_name">电视</view>
+                <view class="goods_price_num">
+                    <view class="goods_num">
+                        <i-panel title="基础用法">
+                            <view class="goods_price">￥9999</view>
+                            <view class="goods_price_num">
+                                <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+                            </view>
+                        </i-panel>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cart_main">
+        <view class="cart_item">
+            <view class="cart_wrap">
+                <checkbox-group>
+                    <checkbox class=""></checkbox>
+                </checkbox-group>
+            </view>
+            <navigator class="cart_nav">
+                <image mode="widthFix" src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000715469339_1_400x400.jpg" />
+            </navigator>
+            <view class="cart_info">
+                <view class="goods_name">电视</view>
+                <view class="goods_price_num">
+                    <view class="goods_num">
+                        <i-panel title="基础用法">
+                            <view class="goods_price">￥9999</view>
+                            <view class="goods_price_num">
+                                <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+                            </view>
+                        </i-panel>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
 </view>

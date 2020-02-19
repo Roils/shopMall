@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "i-input-number": "../../components/input-number/index"
+  },
   "navigationBarTitleText": "我的购物车"
 }
