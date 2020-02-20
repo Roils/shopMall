@@ -1,1 +1,117 @@
 /* pages/pay/pay.wxss */
+page {
+  padding-bottom: 90rpx;
+}
+.cart_content .cart_title {
+  color: var(--themeColor);
+  font-size: 40rpx;
+  font-weight: 500;
+  padding-left: 20rpx;
+}
+.cart_content .cart_main {
+  border-style: solid;
+  /* box-shadow: 0px 2px 4px 2px #DDDDDD; */
+  border-width: 0rpx;
+  padding: 5rpx;
+}
+.cart_content .cart_main .cart_item {
+  display: flex;
+}
+.cart_content .cart_main .cart_item .cart_wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_main .cart_item .cart_nav {
+  flex: 2;
+}
+.cart_content .cart_main .cart_item .cart_nav image {
+  padding-top: 10rpx;
+}
+.cart_content .cart_main .cart_item .cart_info {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_name {
+  flex: 1;
+  font-size: 30rpx;
+  color: #5e5a5a;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_price_num {
+  width: 100%;
+  flex: 1;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_price_num .goods_num {
+  display: flex;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_price_num .goods_num .goods_price {
+  flex: 1;
+  text-align: left;
+  color: var(--themeColor);
+  font-size: 30rpx;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_price_num .goods_num .goods_er {
+  flex: 2;
+  display: flex;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_price_num .goods_num .goods_er .goods_edit {
+  flex: 1;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_price_num .goods_num .goods_er .goods_all {
+  flex: 1;
+}
+.cart_content .cart_main .cart_item .cart_info .goods_price_num .goods_num .goods_er .goods_reduce {
+  flex: 1;
+}
+view.cart_tab {
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  background-color: white;
+}
+view.cart_tab view.tab_item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+view.cart_tab view.tab_check {
+  flex: 2;
+  /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+  padding-right: 40rpx;
+}
+view.cart_tab view.tab_check view.tab_sunmoney {
+  color: var(--themeColor);
+  text-align: right;
+  font-size: 35rpx;
+}
+view.cart_tab view.tab_check view.tab_yun {
+  text-align: right;
+  font-size: 30rpx;
+  color: #7a9191;
+}
+view.cart_tab view.tab_pay {
+  flex: 1;
+  background-color: var(--themeColor);
+  font-size: 40rpx;
+  font-weight: 500;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

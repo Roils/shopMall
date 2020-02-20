@@ -5,53 +5,52 @@
 <view class="cart_content">
     <view class="cart_title"></view>
     <view class="cart_main">
-        <view class="cart_item">
-            <view class="cart_wrap">
-                <checkbox-group>
-                    <checkbox class=""></checkbox>
-                </checkbox-group>
-            </view>
-            <navigator class="cart_nav">
-                <image mode="widthFix" src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000715469339_1_400x400.jpg" />
-            </navigator>
-            <view class="cart_info">
-                <view class="goods_name">电视</view>
-                <view class="goods_price_num">
-                    <view class="goods_num">
-                        <i-panel title="基础用法">
-                            <view class="goods_price">￥9999</view>
-                            <view class="goods_price_num">
-                                <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+        <block wx:if="{{cart.length!==0}}">
+            <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+                <view class="cart_wrap">
+                    <checkbox-group data-id="{{ item.goods_id }}" bindchange="itemchange">
+                        <checkbox checked="{{item.checked}}" class=""></checkbox>
+                    </checkbox-group>
+                </view>
+                <navigator class="cart_nav">
+                    <image mode="widthFix" src="{{item.goods_small_logo}}" />
+                </navigator>
+                <view class="cart_info">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="goods_price_num">
+                        <view class="goods_num">
+                            <view class="goods_price">{{item.goods_price}}</view>
+                            <view class="goods_er">
+                                <view bindtap="itemedit" data-id="{{item.goods_id}}" data-goodedit="{{-1}}" class="goods_edit">
+                                    -
+                                </view>
+                                <view class="goods_all">{{item.num}}</view>
+                                <view bindtap="itemedit" data-id="{{item.goods_id}}" data-goodedit="{{1}}" class="goods_reduce">
+                                    +
+                                </view>
                             </view>
-                        </i-panel>
+                        </view>
                     </view>
                 </view>
             </view>
-        </view>
+        </block>
+        <block wx:else>
+            <image mode="widthFix" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582200689591&di=86382fdb2fab1e80ca12091ad84abc9f&imgtype=0&src=http%3A%2F%2Fm.hua.com%2Fimages%2Fgwc_k.png"></image>
+        </block>
+          
     </view>
-    <view class="cart_main">
-        <view class="cart_item">
-            <view class="cart_wrap">
-                <checkbox-group>
-                    <checkbox class=""></checkbox>
-                </checkbox-group>
-            </view>
-            <navigator class="cart_nav">
-                <image mode="widthFix" src="http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000715469339_1_400x400.jpg" />
-            </navigator>
-            <view class="cart_info">
-                <view class="goods_name">电视</view>
-                <view class="goods_price_num">
-                    <view class="goods_num">
-                        <i-panel title="基础用法">
-                            <view class="goods_price">￥9999</view>
-                            <view class="goods_price_num">
-                                <i-input-number value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
-                            </view>
-                        </i-panel>
-                    </view>
-                </view>
-            </view>
+</view>
+<view class="tab_bottom">
+    <view class="cart_tab">
+        <view class="tab_item">
+            <checkbox-group bindchange="itemallchecked">
+                <checkbox checked="{{allchecked}}" class="">全选</checkbox>
+            </checkbox-group>
         </view>
+        <view class="tab_check">
+            <view class="tab_sunmoney">合计:{{allprice}}</view>
+            <view class="tab_yun">合计运费</view>
+        </view>
+        <view bindtap="goodspay" class="tab_pay">结算({{allnum}})</view>
     </view>
 </view>

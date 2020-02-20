@@ -64,6 +64,7 @@ Page({
     })
     if(index ==-1){
       that.goodsinfo.num = 1
+      that.goodsinfo.checked = true
       cart.push(that.goodsinfo)
     }else{
       cart[index].num++
