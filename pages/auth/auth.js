@@ -1,4 +1,5 @@
 // pages/auth/auth.js
+import { request } from '../../request/index'
 Page({
 
   /**
@@ -7,7 +8,21 @@ Page({
   data: {
 
   },
+  getuserinfo(e) {
+    const { encryptedData, rawData, iv, signature } = e.detail
+    wx.login({
+      timeout: 10000,
+      success: (result) => {
+        const { code } = result
+        const loginparams = { encryptedData, rawData, iv, signature, code }
+        request({ url: "/users/wxlogin", data: loginparams,methos:"post" })
+          .then(function (res) {
+            console.log(res)
+          })
+      },
+    });
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */

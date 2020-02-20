@@ -61,7 +61,7 @@ Page({
     var that = this
     const address = wx.getStorageSync("address");
     const cart = wx.getStorageSync("cart") || [];
-    let checkedCart = cart.filter(v=>v.checked)
+    let checkedCart = cart.filter(v => v.checked)
     const num = cart.num
     let allchecked = true
     let allprice = 0
@@ -136,7 +136,18 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  
+
+  orderpay() {
+    const token = wx.getStorageSync("token");
+    if(!token){
+      wx.navigateTo({
+        url: '/pages/auth/auth',
+      });
+      return 
+    }
+      
+  },
+
   onHide: function () {
 
   },

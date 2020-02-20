@@ -45,6 +45,6 @@
             <view class="tab_sunmoney">合计:{{allprice}}</view>
             <view class="tab_yun">包含运费</view>
         </view>
-        <view class="tab_pay">支付({{allnum}})</view>
+        <view bindtap="orderpay" class="tab_pay">支付({{allnum}})</view>
     </view>
 </view>

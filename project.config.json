@@ -90,6 +90,12 @@
 					"pathName": "pages/cart/cart",
 					"query": "goods_id=43985",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/auth/auth",
+					"pathName": "pages/auth/auth",
+					"scene": null
 				}
 			]
 		}
